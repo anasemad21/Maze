@@ -1,0 +1,18 @@
+parent(mohamed,ali).
+parent(emad,anas).
+male(mohamed).
+male(emad).
+father(X,Y):-
+    parent(X,Y),
+    male(X).
+
+mother(X,Y):-
+    parent(X,Y),
+    female(X).
+power(X, 1, X).
+% If the power was even
+power(X, Y, Output):-
+    0 is Y mod 2,
+    Y2 is integer(Y/2),
+    power(X, Y2, Output2),
+    Output is Output2 * Output2.
